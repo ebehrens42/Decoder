@@ -1,2 +1,2 @@
-# Translator
+# Decoder
 this is $
