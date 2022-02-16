@@ -1,0 +1,29 @@
+.centered {
+    width: 70%;
+    margin: auto;
+    margin-top: 8%;
+}
+
+.content {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 2%;
+    padding: 5%;
+    height: 480px;
+}
+
+.input {
+    border: 1px solid black;
+    border-radius: 2%;
+    height: 430px;
+    width: 100%;
+    padding: 3%;
+}
+
+.result {
+    border: 1px solid black;
+    border-radius: 2%;
+    height: 430px;
+    width: 100%;
+    padding: 3%;
+}

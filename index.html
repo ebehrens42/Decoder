@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="decoder" 
+              content="for car$ and marble only" 
+              charset="utf-8">
+        <title>Todo List App</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- <script src="index.js"></script> -->
+    </head>
+    <body>
+        <div class="centered">
+            <div class="row">
+                <div class="col">
+                    <div class="content" name="stuff" id="form">
+                        <textarea class="input" name="input" id="input"> enter text here...</textarea>
+                    </div>
+                    <button class="btn" onclick="update()">decode</button>
+                </div>
+                <div class="col">
+                    <div class="content">
+                        <div class="result" id="result">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </body>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script>
+        const map = new Map();
+        map.set('`', '`');
+        map.set('¡', '1');
+        map.set('™', '2');
+        map.set('£', '3');
+        map.set('¢', '4');
+        map.set('∞', '5');
+        map.set('§', '6');
+        map.set('¶', '7');
+        map.set('•', '8');
+        map.set('ª', '9');
+        map.set('º', '0');
+        map.set('–', '-');
+        map.set('≠', '=');
+
+        map.set('œ', 'q');
+        map.set('∑', 'w');
+        map.set('´', 'e');
+        map.set('®', 'r');
+        map.set('†', 't');
+        map.set('¥', 'y');
+        map.set('¨', 'u');
+        map.set('ˆ', 'i');
+        map.set('ø', 'o');
+        map.set('π', 'p');
+        map.set('“', '[');
+        map.set('‘', ']');
+        map.set('«', '|');
+
+        map.set('å', 'a');
+        map.set('ß', 's');
+        map.set('∂', 'd');
+        map.set('ƒ', 'f');
+        map.set('©', 'g');
+        map.set('˙', 'h');
+        map.set('∆', 'j');
+        map.set('˚', 'k');
+        map.set('¬', 'l');
+        map.set('…', ';');
+        map.set('æ', '"');
+
+        map.set('Ω', 'z');
+        map.set('≈', 'x');
+        map.set('ç', 'c');
+        map.set('√', 'v');
+        map.set('∫', 'b');
+        map.set('˜', 'n');
+        map.set('µ', 'm');
+        map.set('≤', ',');
+        map.set('≥', '.');
+
+        map.set('⁄', '!');
+        map.set('€', '@');
+        map.set('‹', '#');
+        map.set('›', '$');
+        map.set('ﬁ', '%');
+        map.set('ﬂ', '^');
+        map.set('‡', '&');
+        map.set('°', '*');
+        map.set('·', '(');
+        map.set('‚', ')');
+        map.set('—', '_');
+        map.set('±', '+');
+
+        map.set('Œ', 'Q');
+        map.set('„', 'W');
+        map.set('´', 'E');
+        map.set('‰', 'R');
+        map.set('ˇ', 'T');
+        map.set('Á', 'Y');
+        map.set('¨', 'U');
+        map.set('ˆ', 'I');
+        map.set('Ø', 'O');
+        map.set('∏', 'P');
+        map.set('”', '{');
+        map.set('’', '}');
+        map.set('»', '|');
+
+        map.set('Å', 'A');
+        map.set('Í', 'S');
+        map.set('Î', 'D');
+        map.set('Ï', 'F');
+        map.set('©', 'G');
+        map.set('Ó', 'H');
+        map.set('Ô', 'J');
+        map.set('Ò', 'L');
+        map.set('Ú', ':');
+        map.set('Æ', '"');
+
+        map.set('¸', 'Z');
+        map.set('˛', 'X');
+        map.set('Ç', 'C');
+        map.set('◊', 'V');
+        map.set('ı', 'B');
+        map.set('˜', 'N');
+        map.set('¯', '<');
+        map.set('˘', '>');
+        map.set('¿', '?');
+
+        function decode(str){
+            var ans = "";
+            const len = str.length;
+
+            for(var i=0; i<len; ++i) {
+                var temp;
+                if(map.get(str.charAt(i)) === undefined) {
+                    temp = str.charAt(i);
+                } else {
+                    temp = map.get(str.charAt(i));
+                }
+                ans += temp;
+            }
+
+            return ans;
+        }
+
+        function update() {
+            var input = document.getElementById("input").value;
+            var decoded = decode(input);
+            //console.log(decoded);
+            document.getElementById("result").innerHTML = decoded;
+        }
+        
+    </script> 
+</html>
