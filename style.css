@@ -27,6 +27,7 @@
     height: 430px;
     width: 100%;
     padding: 3%;
+    overflow-y: auto;
 }
 
 .btn {
